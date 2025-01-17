@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    position: sticky;
+    top: 0;
+}
+
+header div.navbar{
+    background-color:rgb(183, 100, 224);
+    height: 10vh;    
+}
+
+footer div.foot{
+    background-color:rgb(204, 171, 221);
+    height: 10vh;
+}
+
+main {
+    height: 80vh;
+}
+
+main div.container1 {
+    background-color: rgb(143, 236, 167);
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10vw;
+}
+
+main div.container1 div.box1, div.box2 {
+    width: 30vw;
+    height: 48vh;
+}
+
+main div.container1 div.box1 {
+    background-color:coral ;
+}
+
+main div.container1 div.box2 {
+    background-color:cornflowerblue ;
+}
+
+main div.container2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+    gap: 10vw;
+}
+
+main div.container2 div.text {
+    border: 2px solid black;
+    padding: 20px;
+    font-size:xx-large;
+    border-radius: 30px;    
+}
+
+
+main div.container2 div.image img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;    
+}
