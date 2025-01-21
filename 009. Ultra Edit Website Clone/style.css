@@ -195,3 +195,84 @@ div.downloadsContainer div.downloadOptions div.downloadOption div.hashCode .code
     max-width: 100%; 
     line-height: 1rem;    
 }
+
+div.subscribeContainer {
+    background-color: #222; 
+    color: white;   
+    width: 100%;
+    padding: 50px 20%;
+    margin: 100px 0 50px;
+}
+
+div.subscribeContainer div.newsLetter {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    justify-content: center;
+    align-items: center;
+    text-align: center;    
+}
+
+div.subscribeContainer div.newsLetter div.joiningText {
+    padding: 0 20% 0 10%;
+}
+
+div.subscribeContainer div.newsLetter div.joiningText h3 {
+    font-size: 1.7em;
+    font-weight: 700;
+}
+
+div.subscribeContainer div.newsLetter div.joiningText p {
+    margin-top: 20px;
+}
+
+
+div.subscribeContainer div.newsLetter div.signUpForm {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    color: black;
+    padding: 30px 35px;
+    border-radius: 10px;
+}
+
+div.subscribeContainer div.newsLetter div.signUpForm h3 {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #00b6d1!important;
+}
+
+div.subscribeContainer div.newsLetter div.signUpForm p {    
+    font-weight: 400;
+    margin-top: 20px;
+}
+
+div.subscribeContainer div.newsLetter div.signUpForm input {
+    padding: 15px;
+    margin: 20px 0;
+    border: 1.5px solid #94cdd6;
+    border-radius: 5px;
+    
+}
+
+div.subscribeContainer div.newsLetter div.signUpForm input::placeholder {
+    visibility: hidden;
+}
+
+div.subscribeContainer div.newsLetter div.signUpForm input:focus {
+    border: 1.5px solid #94cdd6; 
+    box-shadow: 0 0 6px 0 rgba(0, 182, 209, 0.8);  
+    outline: none;  
+    transition: all 0.3s ease;  
+}
+
+div.subscribeContainer div.newsLetter div.signUpForm button {
+    padding: 15px;
+    background-color: #00b6d1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bolder;
+    font-family: inherit;
+    font-size: medium;
+}
