@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {    
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif    
+}
+
+div.navbarContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 25px 10vw;
+}
+
+div.navbarContainer div.logoContainer img{
+    height: 60px;
+}
+
+div.navbarContainer div.linksSearchContainer {
+    display: flex;
+    align-items: center;
+}
+
+div.navbarContainer div.linksSearchContainer div.navLinksContainer ul {
+    display: flex;
+    list-style: none;
+    
+}
+
+div.navbarContainer div.linksSearchContainer div.navLinksContainer ul li, .navLinks {
+    margin: 0 10px;
+    color: black;
+    text-decoration: none;
+}
+
+div.navbarContainer div.linksSearchContainer div.searchContainer {
+    display: flex;
+    align-items: center;
+    margin: 0 10px;    
+} 
+
+div.navbarContainer div.linksSearchContainer div.searchContainer img {
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+div.navbarContainer div.linksSearchContainer div.searchContainer input {
+    padding: 5px;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+}
+
+div.focusContainer, div.downloadsContainer {
+    width: 90vw;
+    margin: 0 auto;   
+    padding: 0 20%; 
+}
+
+div.focusContainer div.mainText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 100px 0 50px;
+}
+
+div.focusContainer div.mainText img {
+    display: block; 
+}
+
+div.focusContainer div.mainText h1 {
+    font-size: 3em;
+    margin: 0 10px;
+    font-weight: 600;
+}
+
+div.focusContainer div.midText {
+    margin: 50px 0;    
+}
+
+div.focusContainer div.midText h3 {
+    font-size: 1.5em;
+    font-weight: lighter;
+    text-align: center;
+}
+
+div.focusContainer div.downloadButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+}
+
+div.focusContainer div.downloadButton button {
+    font-size: 14px;
+    color: white;
+    background-color: #00b6d1;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+div.downloadsContainer div.downloadHeading {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 100px 0 50px;
+}
+
+div.downloadsContainer div.downloadHeading img{
+    width: 60px;
+}
+
+div.downloadsContainer div.downloadHeading h3{
+    margin-left: 30px;
+    font-weight: 600;
+    font-size: 1.4em;
+}
+
+div.downloadsContainer div.downloadHeading span{
+    font-weight: lighter;
+}
+
+div.downloadsContainer div.downloadHeading a{
+    text-decoration: none;
+    color: black;
+}
+
