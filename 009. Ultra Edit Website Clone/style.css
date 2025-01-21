@@ -276,3 +276,18 @@ div.subscribeContainer div.newsLetter div.signUpForm button {
     font-family: inherit;
     font-size: medium;
 }
+
+div.subscribeContainer div.basicProductInfo {
+    margin-top: 50px;
+}
+
+div.subscribeContainer div.basicProductInfo h3 {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin: 20px 0;
+}
+
+div.subscribeContainer div.basicProductInfo a {
+    text-decoration: none;
+    color: #00b6d1;
+}
