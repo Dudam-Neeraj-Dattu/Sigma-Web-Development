@@ -65,7 +65,7 @@ div.navbarContainer div.linksSearchContainer div.searchContainer input {
 }
 
 div.focusContainer, div.downloadsContainer {
-    width: 90vw;
+    width: 100%;
     margin: 0 auto;   
     padding: 0 20%; 
 }
@@ -353,4 +353,35 @@ div.queryContainer div.newsLetterContainer button {
     font-size: medium;
 }
 
+footer {
+    width: 100%;
+    padding: 0 20%;    
+}
+div.footerContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    margin-top: 70px;
+    align-items: center;
+}
+
+div.footerContainer div.logo img {
+    height: 60px;
+}
+
+div.footerContainer div.socialLinks {
+    justify-self: flex-end;
+}
+
+div.footerContainer div.socialLinks img {
+    height: 30px;
+    margin-left: 10px;
+}
+
+div.copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0 10px 0;
+}
 
