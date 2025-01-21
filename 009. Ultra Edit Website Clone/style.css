@@ -291,3 +291,66 @@ div.subscribeContainer div.basicProductInfo a {
     text-decoration: none;
     color: #00b6d1;
 }
+
+div.queryContainer {
+    display: flex;
+    justify-content: center;
+}
+
+div.queryContainer div.importantLinks {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);    
+}
+
+div.queryContainer div.importantLinks li, div.queryContainer div.newsLetterContainer li {
+    list-style: none;
+    margin-top: 5px;
+    font-size: 0.9em;
+}
+
+div.queryContainer div.importantLinks a, div.queryContainer div.newsLetterContainer a {
+    text-decoration: none;
+    color: black;
+}
+
+div.queryContainer div.importantLinks p, div.queryContainer div.newsLetterContainer p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+div.queryContainer div.importantLinks div.query div.links {    
+    width: 80%;
+}
+
+div.queryContainer div.newsLetterContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+div.queryContainer div.newsLetterContainer input {
+    padding: 10px;
+    margin: 20px 0;
+    border: 1.5px solid #94cdd6;
+    border-radius: 5px;  
+}
+
+div.queryContainer div.newsLetterContainer input:focus {
+    border: 1.5px solid #94cdd6; 
+    box-shadow: 0 0 6px 0 rgba(0, 182, 209, 0.8);  
+    outline: none;  
+    transition: all 0.3s ease;
+}
+
+div.queryContainer div.newsLetterContainer button {
+    padding: 10px;
+    background-color: #00b6d1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bolder;
+    font-family: inherit;
+    font-size: medium;
+}
+
+
