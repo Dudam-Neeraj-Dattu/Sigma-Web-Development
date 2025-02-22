@@ -6,7 +6,9 @@
     position: absolute;
     bottom: 0;
     left: 0; 
-    animation: bounce 10s linear infinite;
+    /* animation: bounce 10s linear infinite; */
+    animation: animateX 5s linear infinite, animateY 1s ease-out infinite alternate;
+
 }
 
 .container {
@@ -16,7 +18,25 @@
     background-color: blue;
 }
 
-@keyframes bounce {
+@keyframes animateX {
+    from {
+        left: 0;
+    }
+    to {
+        left: 90%;
+    }
+}
+
+@keyframes animateY {
+    from {
+        bottom: 0;
+    }
+    to {
+        bottom: 80%;
+    }
+}
+
+/* @keyframes bounce {
     0% {
         transform: translateX(0) translateY(0);
     }
@@ -44,4 +64,4 @@
     100% {
         transform: translateX(73vw) translateY(0);
     }
-}
+} */
