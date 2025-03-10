@@ -14,5 +14,12 @@ function facFor(number){
     }
     return fac
 }
+
+function fac(number){
+
+    if (number === 1) return 1;
+    return number * fac(number-1)
+}
+
 console.log(factorial(a))
 console.log(facFor(a))
