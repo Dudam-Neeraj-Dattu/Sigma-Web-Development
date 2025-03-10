@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic card builder</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Dynamic card builder</h1>
+        <div class="inputFields">
+            <div class="inputName">
+                <label for="card-title">Title: </label>
+                <label for="channel-name">Channel Name: </label>
+                <label for="view-count">View Count: </label>
+                <label for="video-duration">Video Duration: </label>
+                <label for="months-old">Months Old:</label>
+                <label for="video-thumbnail">Video Thumbnail:</label>
+            </div>
+            <div class="inputField">
+                <input type="text" id="card-title" placeholder="Enter card title" required>
+                <input type="text" id="channel-name" placeholder="Enter channel name" required>
+                <input type="text" id="view-count" placeholder="Enter view count" required>
+                <input type="text" id="video-duration" placeholder="Enter video duration" required>
+                <input type="number" id="months-old" placeholder="Enter months old" required>
+                <input type="url" id="video-thumbnail" placeholder="Enter video thumbnail link" required>
+            </div>            
+        </div>    
+        <button onclick="createCard()">Create Card</button>    
+    </div>
+    <div class="card-container">
+        <div class="card">
+            <div class="card-thumbnail">
+                <img src="https://i.ytimg.com/vi/tVzUXW6siu0/hqdefault.jpg?sqp=-oaymwEmCKgBEF5IWvKriqkDGQgBFQAAiEIYAdgBAeIBCggYEAIYBjgBQAE=&rs=AOn4CLB6VzxANxt3dHm91HW9lLfDlxvmuA" alt="thumbnail">
+                <span>31:20</span>
+            </div>
+            <div class="card-content">
+                <h2>Installing VS Code & How Websites Work | Sigma Web Development Course - Tutorial #1</h2>                    
+                <div class="info">
+                    <p>CodeWithHarry</p>
+                    <p class="dot">.</p>
+                    <p>1.2M views</p>
+                    <p class="dot">.</p>
+                    <p>1 month ago</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-thumbnail">
+                <img src="https://i.ytimg.com/vi/kJEsTjH5mVg/hqdefault.jpg?sqp=-oaymwEmCKgBEF5IWvKriqkDGQgBFQAAiEIYAdgBAeIBCggYEAIYBjgBQAE=&rs=AOn4CLBYghRBiZcZs-xVJKq92lAM8h3BOg" alt="thumbnail">
+                <span>28:31</span>
+            </div>
+            <div class="card-content">
+                <h2>Your First HTML Website | Sigma Web Development Course - Tutorial #2</h2>                    
+                <div class="info">
+                    <p>CodeWithHarry</p>
+                    <p class="dot">.</p>
+                    <p>1.4M views</p>
+                    <p class="dot">.</p>
+                    <p>1 month ago</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
