@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing requests</title>
+</head>
+<body>
+    <h1>This is a static file</h1>
+
+    <script>
+        async function postTest() {
+            let response = await fetch("/", {method: "POST"});
+            let data = await response.text(); 
+            console.log(data);
+        }
+        // async function putTest() {
+        //     let response = await fetch("/", {method: "PUT"});
+        //     let data = await response.text(); 
+        //     console.log(data);
+        // }
+        postTest();
+    </script>
+</body>
+</html>
