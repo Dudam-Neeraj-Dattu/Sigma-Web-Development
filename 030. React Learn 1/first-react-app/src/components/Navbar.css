@@ -1,0 +1,15 @@
+.navbar {    
+    background-color: #f8f9fa;
+    padding: 10px;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar ul {
+    display: flex;
+    gap: 20px;
+}
+.navbar ul li {
+    list-style: none;
+    
+}
