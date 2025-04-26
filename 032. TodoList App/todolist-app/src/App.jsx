@@ -63,12 +63,12 @@ function App() {
    return (
       <div className="flex flex-col h-dvh">
          <Navbar />
-         <div className="flex-grow flex flex-col items-center p-5 bg-purple-200 w-3/4 mx-auto my-5 rounded-lg">
-            <div className="heading text-2xl font-bold">
+         <div className="flex-grow flex flex-col items-center p-5 bg-purple-200 w-3/4 mx-auto my-5 rounded-lg max-md:w-[93.5%]">
+            <div className="heading text-2xl font-bold text-center">
                <h1>Todo Bro - Let's make your tasks organised</h1>
             </div>
-            <div className="addTaskContainer my-5 w-3/4">
-               <div className="addTask font-bold text-xl">
+            <div className="addTaskContainer my-5 w-3/4 max-lg:w-full">
+               <div className="addTask font-bold text-xl max-lg:text-center">
                   <h2>Add Task</h2>
                </div>
                <div className="addTaskInput flex gap-2 my-4">
@@ -76,7 +76,7 @@ function App() {
                   <button onClick={handleAddClick} className="bg-green-800 cursor-pointer px-3 py-2 rounded-xl text-white font-bold">Add</button>
                </div>
             </div>
-            <div className="tasksContainer flex-grow border-2 border-purple-800 rounded-lg w-3/4 px-5">
+            <div className="tasksContainer flex-grow border-2 border-purple-800 rounded-lg w-3/4 px-5 max-lg:w-full">
                {tasks.length === 0 && <h1 className="text-center text-2xl font-bold">No tasks added yet</h1>}
                {tasks.map((task) => (
                   // <div key={task.id} className="taskContainer flex w-full  justify-between gap-5 my-5 p-5 bg-purple-300 font-medium rounded-lg hover:bg-purple-100 hover:shadow-lg hover: shadow-purple-300">
@@ -93,7 +93,7 @@ function App() {
                      {/* Checkbox */}
                      <input
                         onChange={handleCheckbox(task.id)}
-                        className="h-7 w-8 cursor-pointer"
+                        className="h-7 w-8 cursor-pointer max-sm:h-5 max-sm:w-5"
                         type="checkbox"
                         name=""
                         id=""
@@ -112,15 +112,15 @@ function App() {
                      <div className="taskButtons flex gap-2">
                         <button
                            onClick={handleEdit(task.id)}
-                           className="bg-purple-800 cursor-pointer px-3 py-2 rounded-xl"
+                           className="bg-purple-800 cursor-pointer px-3 py-2 rounded-xl max-sm:px-1 max-sm:py-1"
                         >
-                           <FaEdit className="h-5 w-8 invert" />
+                           <FaEdit className="h-5 w-8 invert max-sm:h-4" />
                         </button>
                         <button
                            onClick={handleDelete(task.id)}
-                           className="bg-red-600 cursor-pointer px-3 py-2 rounded-xl"
+                           className="bg-red-600 cursor-pointer px-3 py-2 rounded-xl max-sm:px-1 max-sm:py-1"
                         >
-                           <MdDeleteForever className="h-5 w-8 invert" />
+                           <MdDeleteForever className="h-5 w-8 invert " />
                         </button>
                      </div>
                   </div>
