@@ -23,3 +23,4 @@ redux - https://redux.js.org/
 nextjs - https://nextjs.org/docs
 background design - https://bg.ibelick.com/
 toastify - https://fkhadra.github.io/react-toastify/introduction/#license (its like a pop up)
+uuid - https://www.npmjs.com/package/uuid
