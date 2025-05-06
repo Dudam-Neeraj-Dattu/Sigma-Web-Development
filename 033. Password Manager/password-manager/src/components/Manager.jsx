@@ -34,6 +34,7 @@ const Manager = () => {
                   Save Password
                </button>
             </div>
+            <h1 className='self-start text-2xl font-bold text-green-800'>Your Passwords</h1>
          </div>
       </div>
    )
