@@ -1,6 +1,6 @@
 import Navbar from './components/Navbar'
-import Manager from './components/Manager'
-import Passwords from './components/Passwords'
+import Manager from './components/Form'
+import Passwords from './components/PasswordDisplay'
 import Footer from './components/Footer'
 
 function App() {
