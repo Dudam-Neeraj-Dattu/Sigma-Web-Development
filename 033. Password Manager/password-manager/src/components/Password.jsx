@@ -1,49 +1,20 @@
 import React from 'react'
 import { useState } from 'react'
-import { useDispatch } from "react-redux";
-import { startEdit, deletePassword } from "../redux/passwordSlice"
-import { ToastContainer, toast } from 'react-toastify';
+import PasswordActions from '../hooks/passwordActions';
 
 const Password = (props) => {
 
    const [showPassword, setShowPassword] = useState(false);
-   const dispatch = useDispatch();
+
+   const { handleEdit, handleDelete, handleCopy, formatURL } = PasswordActions();
 
    const togglePasswordVisibility = () => {
       setShowPassword(prev => !prev);
    }
 
-   const handleEdit = () => {
-      // console.log(props.id);
-      dispatch(startEdit(props.id));
-   }
-
-   const handleDelete = () => {
-      if (window.confirm("Are you sure you want to delete this password?")) {
-         dispatch(deletePassword(props.id));
-      }
-   }
-
-   const handleCopy = async (text) => {
-      // console.log(text);
-      try {
-         await navigator.clipboard.writeText(text);
-         toast.success('Text copied to clipboard');
-      } catch (err) {
-         toast.error('Failed to copy text: ', err);
-      }
-   }
-
-   const formatURL = (url) => {
-      if (!/^https?:\/\//i.test(url)) {
-         return `https://${url}`;
-      }
-      return url;
-   };
-
    return (
       <>
-         <div className="py-2 px-4 border-b-2  border-r-2 border-l-2 border-green-400 col-span-3 flex items-center">
+         <div className="py-2 px-4 border-b-2  border-r-2 border-l-2 border-green-400 col-span-3 flex items-center max-2xl:col-span-2 max-xl:col-span-3 max-lg:col-span-2">
             <div className='break-all'>
                <a href={formatURL(props.site)} target="_blank" rel="noopener noreferrer">
                   {props.site}
@@ -77,34 +48,35 @@ const Password = (props) => {
                </lord-icon>
             </div>
          </div>
-         <div className="py-2 px-4 border-b-2 border-r-2 border-green-400 flex items-center justify-center gap-3">
-            <div>
+         <div className="py-2 px-4 border-b-2 border-r-2 border-green-400 flex items-center justify-center gap-3 max-sm:gap-1">
+            <div className='h-[30px]'>
 
-               <lord-icon onClick={togglePasswordVisibility} className="cursor-pointer"
+               <lord-icon onClick={togglePasswordVisibility} className="cursor-pointer w-[30px] h-[30px]"
                   src="https://cdn.lordicon.com/dicvhxpz.json"
                   trigger="hover"
                   stroke="bold"
                   colors="primary:#242424,secondary:#16c72e"
-                  style={{ "width": "30px", "height": "30px" }}>
+               >
                </lord-icon>
             </div>
-            <div>
+            <div className='h-[30px]'>
 
-               <lord-icon onClick={handleEdit} className="cursor-pointer"
+               <lord-icon onClick={() => handleEdit(props.id)} className="cursor-pointer w-[30px] h-[30px]"
                   src="https://cdn.lordicon.com/exymduqj.json"
                   trigger="hover"
                   stroke="bold"
                   colors="primary:#242424,secondary:#16c72e"
-                  style={{ "width": "30px", "height": "30px" }}></lord-icon>
+               ></lord-icon>
             </div>
-            <div>
+            <div className='h-[30px]'>
 
-               <lord-icon onClick={handleDelete} className="cursor-pointer"
+               <lord-icon onClick={() => handleDelete(props.id)} className="cursor-pointer w-[30px] h-[30px]"
                   src="https://cdn.lordicon.com/hwjcdycb.json"
                   trigger="hover"
                   stroke="bold"
                   colors="primary:#242424,secondary:#16c72e"
-                  style={{ "width": "30px", "height": "30px" }}>
+
+               >
                </lord-icon>
             </div>
          </div>

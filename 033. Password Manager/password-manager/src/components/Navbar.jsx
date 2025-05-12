@@ -2,7 +2,7 @@ import React from 'react'
 
 const Navbar = () => {
    return (
-      <div className="bg-green-200 text-green-900 flex justify-between items-center p-2 px-10 sticky top-0 w-full z-10">
+      <div className="bg-green-200 text-green-900 flex justify-between items-center p-2 px-10 sticky top-0 w-full z-10 max-[480px]:px-5">
          <div className="name text-2xl font-bold">
             <span className='text-green-500'> &lt;</span>
             <span>NeePass</span>
