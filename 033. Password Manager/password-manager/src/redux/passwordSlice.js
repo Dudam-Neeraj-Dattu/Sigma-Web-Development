@@ -1,8 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { v4 as uuidv4 } from 'uuid';
 
+const getInitialPasswords = () => {
+  const localData = localStorage.getItem("passwords");
+  return localData ? JSON.parse(localData) : [];
+};
+
+const updateLocalStorage = (passwords) => {
+   localStorage.setItem("passwords", JSON.stringify(passwords));
+};
+
 const initialState = {
-   passwords: [],      // Stores all password objects
+   passwords: getInitialPasswords(),      // Stores all password objects
    editId: null,       // ID of password being edited
    form: {             // Current values in form
       site: "",
@@ -56,13 +65,15 @@ const passwordSlice = createSlice({
             password: ""
          };
          state.editId = null;
+         updateLocalStorage(state.passwords);
       },
 
       deletePassword(state, action) {
          state.passwords = state.passwords.filter(p => p.id !== action.payload);
+         updateLocalStorage(state.passwords);
       }
    },
 });
 
-export const { populatePasswords, setForm, startEdit, savePassword, deletePassword } = passwordSlice.actions;
+export const { setForm, startEdit, savePassword, deletePassword } = passwordSlice.actions;
 export default passwordSlice.reducer;
