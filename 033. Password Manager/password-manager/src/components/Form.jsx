@@ -3,14 +3,14 @@ import { FaRegEye } from "react-icons/fa";
 import { FaRegEyeSlash } from "react-icons/fa";
 import { useSelector, useDispatch } from "react-redux";
 import { setForm, savePassword } from "../redux/passwordSlice";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 
 const Manager = () => {
 
    const dispatch = useDispatch();
    const form = useSelector((state) => state.passwords.form);
-   const passwords = useSelector((state) => state.passwords.passwords);
+   // const passwords = useSelector((state) => state.passwords.passwords);
    const [showPassword, setShowPassword] = useState(false);
 
    const handleChange = (e) => {
@@ -28,9 +28,9 @@ const Manager = () => {
       }
    }
    
-   useEffect(() => {
-      console.log("Updated passwords:", passwords);
-   }, [passwords]);
+   // useEffect(() => {
+   //    console.log("Updated passwords:", passwords);
+   // }, [passwords]);
 
    const togglePasswordVisibility = () => {
       setShowPassword(prev => !prev);
