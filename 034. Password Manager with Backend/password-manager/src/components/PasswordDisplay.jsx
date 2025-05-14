@@ -1,12 +1,20 @@
 import React from 'react'
 import Password from './Password'
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import PasswordSmallScreen from './PasswordSmallScreen';
 import { useMediaQuery } from 'react-responsive';
+import { useEffect } from 'react';
+import { fetchPasswordsThunk } from '../redux/passwordSlice';
 
 
 const Passwords = () => {
    const passwords = useSelector((state) => state.passwords.passwords);
+   // console.log(passwords)
+   const dispatch = useDispatch();
+
+   useEffect(() => {
+     dispatch(fetchPasswordsThunk());
+   }, [dispatch]);
 
    const isSmallScreen = useMediaQuery({ maxWidth: '580px' });
 
@@ -25,7 +33,7 @@ const Passwords = () => {
                <div className="bg-green-200 text-green-900 py-2 px-4 font-bold border-b-2 border-r-2 border-t-2  text-center border-green-400 sticky top-15.5 z-10 break-all">Password</div>
                <div className="bg-green-200 text-green-900 py-2 px-4 font-bold border-b-2 border-t-2 border-r-2 text-center border-green-400 rounded-tr-lg sticky top-15.5 z-10 break-all">Actions</div>
 
-               {/* Rows */}
+               {/* Rows */}               
                {passwords.map((pw) => (                  
                   <Password key={pw.id} id={pw.id} site={pw.site} username={pw.username} password={pw.password} />
                ))}

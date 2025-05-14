@@ -2,15 +2,16 @@ import React from 'react'
 import { FaRegEye } from "react-icons/fa";
 import { FaRegEyeSlash } from "react-icons/fa";
 import { useSelector, useDispatch } from "react-redux";
-import { setForm, savePassword } from "../redux/passwordSlice";
+import { setForm, createPasswordThunk, updatePasswordThunk } from "../redux/passwordSlice";
 import { useState } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 
-const Manager = () => {
+const Form = () => {
 
    const dispatch = useDispatch();
    const form = useSelector((state) => state.passwords.form);
-   // const passwords = useSelector((state) => state.passwords.passwords);
+   const editId = useSelector((state) => state.passwords.editId);
+
    const [showPassword, setShowPassword] = useState(false);
 
    const handleChange = (e) => {
@@ -18,19 +19,26 @@ const Manager = () => {
       dispatch(setForm({ ...form, [name]: value }));
    }
 
-   const handleSave = () => {
+   const handleSave = async () => {
       if (form.site && form.password) {
-         toast("Password saved successfully!")         
-         dispatch(savePassword());
-      }
-      else {
-         toast.error("Fill both URL and Password fields!");                  
+         try {
+            if (editId) {
+               // Editing existing password
+               await dispatch(updatePasswordThunk({ id: editId, password: form })).unwrap();
+               toast("Password updated successfully!");
+            } else {
+               // Creating new password
+               await dispatch(createPasswordThunk(form)).unwrap();
+               toast("Password saved successfully!");
+            }
+         } catch (err) {
+            // console.log(...form);
+            toast.error("Failed to save password!", err);
+         }
+      } else {
+         toast.error("Fill both URL and Password fields!");
       }
    }
-   
-   // useEffect(() => {
-   //    console.log("Updated passwords:", passwords);
-   // }, [passwords]);
 
    const togglePasswordVisibility = () => {
       setShowPassword(prev => !prev);
@@ -91,11 +99,11 @@ const Manager = () => {
             </div>
 
             <div className="min-[480px]:self-start">
-            <h1 className='self-start text-2xl font-bold text-green-800' >Your Passwords</h1>
+               <h1 className='self-start text-2xl font-bold text-green-800' >Your Passwords</h1>
             </div>
          </div>
       </div>
    )
 }
 
-export default Manager
+export default Form

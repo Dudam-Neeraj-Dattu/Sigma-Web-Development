@@ -1,6 +1,6 @@
-// filepath: src/hooks/usePasswordActions.js
 import { useDispatch } from "react-redux";
-import { startEdit, deletePassword } from "../redux/passwordSlice";
+import { startEdit } from "../redux/passwordSlice";
+import { deletePasswordThunk } from "../redux/passwordSlice";
 import { toast } from "react-toastify";
 
 const PasswordActions = () => {
@@ -10,9 +10,14 @@ const PasswordActions = () => {
     dispatch(startEdit(id));
   };
 
-  const handleDelete = (id) => {
+  const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this password?")) {
-      dispatch(deletePassword(id));
+      try {
+        await dispatch(deletePasswordThunk(id)).unwrap();
+        toast.success("Password deleted successfully");
+      } catch (err) {
+        toast.error("Failed to delete password", err);
+      }
     }
   };
 
